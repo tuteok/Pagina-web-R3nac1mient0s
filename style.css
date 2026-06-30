@@ -1,0 +1,413 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#060606;
+    --card:#101010;
+    --red:#ff1f3d;
+    --red2:#ff4d4d;
+    --text:#ffffff;
+    --gray:#cfcfcf;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    background:var(--bg);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* FONDO */
+
+#bg{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.85)
+    ),
+    url("akatsuki-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 8%;
+
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    color:var(--red);
+    font-size:1.5rem;
+    font-weight:900;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--red);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:7rem;
+    font-weight:900;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px var(--red),
+    0 0 40px var(--red);
+}
+
+.hero h2{
+    color:var(--red);
+    letter-spacing:6px;
+
+    margin-top:10px;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    letter-spacing:5px;
+
+    color:#ddd;
+}
+
+.ticket-btn{
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:18px 45px;
+
+    color:white;
+    text-decoration:none;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--red),
+        #990000
+    );
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,.4);
+
+    transition:.3s;
+}
+
+.ticket-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 0 35px rgba(255,0,0,.8);
+}
+
+.hero-sub{
+    display:block;
+    margin-top:20px;
+    color:#aaa;
+}
+
+/* TITULOS */
+
+.section-title{
+    text-align:center;
+    color:var(--red);
+    margin-bottom:30px;
+    font-size:2.5rem;
+}
+
+/* SOBRE */
+
+.section{
+    padding:100px 10%;
+}
+
+.description{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:2;
+    color:#ddd;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    padding:50px 10%;
+}
+
+.card{
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,0,0,.25);
+
+    backdrop-filter:blur(10px);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 25px rgba(255,0,0,.3);
+}
+
+.card h3{
+    color:var(--red);
+    margin-bottom:20px;
+}
+
+.card ul{
+    list-style:none;
+}
+
+.card li{
+    margin:15px 0;
+    color:#ddd;
+}
+
+/* PROCESO */
+
+.process{
+    padding:100px 10%;
+}
+
+.steps{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.step{
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,0,0,.2);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+}
+
+.step span{
+    display:inline-flex;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:20px;
+
+    background:var(--red);
+
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    padding:100px 10%;
+}
+
+.stat-box{
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,0,0,.25);
+}
+
+.stat-box h3{
+    color:#ddd;
+}
+
+.stat-box span{
+    display:block;
+
+    margin-top:15px;
+
+    color:var(--red);
+
+    font-size:2rem;
+    font-weight:bold;
+}
+
+/* DISCORD */
+
+.discord-section{
+    padding:120px 10%;
+
+    text-align:center;
+}
+
+.discord-section p{
+    margin-top:15px;
+    color:#ccc;
+}
+
+.discord-btn{
+    display:inline-block;
+
+    margin-top:35px;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px 40px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--red),
+        #8a0000
+    );
+
+    transition:.3s;
+}
+
+.discord-btn:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    padding:50px 20px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+.footer-logo{
+    font-size:2rem;
+    color:var(--red);
+    margin-bottom:15px;
+}
+
+footer p{
+    margin:8px 0;
+    color:#aaa;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}

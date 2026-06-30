@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AKATSUKI | Reclutamiento Oficial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+☁ AKATSUKI
+</div>
+
+<ul class="nav-links">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#sobre">Sobre Nosotros</a></li>
+<li><a href="#requisitos">Requisitos</a></li>
+<li><a href="#proceso">Proceso</a></li>
+<li><a href="#contacto">Discord</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section id="inicio" class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>AKATSUKI</h1>
+
+<h2>FACCIÓN DE GORDOS TRYHARDS</h2>
+
+<p>
+PODER • ESTRATEGIA • LEALTAD
+</p>
+
+<a
+href="https://discord.gg/6c9VSdN2c"
+target="_blank"
+class="ticket-btn">
+
+📨 ENVIAR TICKET
+
+</a>
+
+<span class="hero-sub">
+ÚNETE A NUESTRA ORGANIZACIÓN
+</span>
+
+</div>
+
+</section>
+
+<section id="sobre" class="section">
+
+<h2 class="section-title">
+¿QUIÉNES SOMOS?
+</h2>
+
+<p class="description">
+
+Akatsuki es una facción de Gorditos que no ven la luz enfocada en el
+trabajo en equipo, la estrategia y la conquista.
+
+Buscamos gordos tryhards con ganas de ftopear y quieran crecer,
+participar en llamadas y formar parte de una faccion de gordos.
+
+</p>
+
+</section>
+
+<section id="requisitos" class="cards">
+
+<div class="card">
+
+<h3>REQUISITOS</h3>
+
+<ul>
+
+<li>✔ Ser activo en Minecraft</li>
+<li>✔ Tener Discord</li>
+<li>✔ Buen comportamiento</li>
+<li>✔ Trabajo en equipo</li>
+<li>✔ Respeto hacia todos</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>BENEFICIOS</h3>
+
+<ul>
+
+<li>🔥 Vas a hacer famoso</li>
+<li>🔥 Vas a conseguir mucha plata</li>
+<li>🔥 Comunidad activa</li>
+<li>🔥 coladas de dedos</li>
+<li>🔥 bullyng mensuales</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="proceso" class="process">
+
+<h2 class="section-title">
+PROCESO DE RECLUTAMIENTO
+</h2>
+
+<div class="steps">
+
+<div class="step">
+<span>1</span>
+<p>Entrar al Discord</p>
+</div>
+
+<div class="step">
+<span>2</span>
+<p>Abrir Ticket</p>
+</div>
+
+<div class="step">
+<span>3</span>
+<p>Entrevista</p>
+</div>
+
+<div class="step">
+<span>4</span>
+<p>Reclutamiento</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="akatsuki-counter">
+    <div class="counter-cloud">☁️</div>
+    <div class="counter-content">
+        <div class="counter-title">Miembros en Línea</div>
+        <div class="counter-value">
+            <span class="red-cloudburst">☁️</span>
+            <span id="online-count" class="count-number">...</span>
+            <span class="red-cloudburst">☁️</span>
+        </div>
+        <div class="counter-subtitle">Akatsuki Activa</div>
+    </div>
+</div>
+
+<style>
+.akatsuki-counter {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(50, 0, 0, 0.8));
+    border: 2px solid #e94560;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(233, 69, 96, 0.4),
+                inset 0 0 20px rgba(233, 69, 96, 0.1);
+}
+
+.akatsuki-counter::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.counter-cloud {
+    font-size: 48px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.counter-content {
+    position: relative;
+    z-index: 2;
+}
+
+.counter-title {
+    color: #e94560;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.counter-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.red-cloudburst {
+    font-size: 28px;
+    animation: cloudPulse 2s ease-in-out infinite;
+}
+
+@keyframes cloudPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+.count-number {
+    font-size: 64px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(233, 69, 96, 0.8),
+                 0 0 40px rgba(233, 69, 96, 0.6);
+    letter-spacing: 5px;
+    min-width: 120px;
+}
+
+.counter-subtitle {
+    color: #a0a0a0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+/* Loading animation */
+@keyframes loading {
+    0% { content: '...'; }
+    25% { content: '. . .'; }
+    50% { content: '. .'; }
+    75% { content: '.'; }
+    100% { content: '...'; }
+}
+
+#online-count:empty::before {
+    content: '...';
+    animation: loading 2s infinite;
+}
+</style>
+
+<script>
+const serverId = '1394628663214866575';
+
+async function updateMemberCount() {
+    try {
+        const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
+        
+        if (!response.ok) {
+            throw new Error('Error en la conexión');
+        }
+        
+        const data = await response.json();
+        const onlineCount = data.presences ? data.presences.length : 0;
+        
+        // Animación de conteo
+        animateCount('online-count', onlineCount);
+        
+    } catch (error) {
+        console.error('Error al obtener miembros:', error);
+        document.getElementById('online-count').textContent = '0';
+    }
+}
+
+function animateCount(elementId, target) {
+    const element = document.getElementById(elementId);
+    const duration = 1000; // 1 segundo
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+    }, 16);
+}
+
+// Actualizar inmediatamente y cada 30 segundos
+updateMemberCount();
+setInterval(updateMemberCount, 30000);
+
+// Actualizar al hacer hover para más interactividad
+document.querySelector('.akatsuki-counter').addEventListener('mouseenter', () => {
+    updateMemberCount();
+});
+</script>
+
+
+</section>
+
+<section id="contacto" class="discord-section">
+
+<h2>ÚNETE A AKATSUKI</h2>
+
+<p>
+Haz clic en el botón y crea un ticket en nuestro servidor.
+</p>
+
+<a
+href="https://discord.gg/6c9VSdN2c"
+target="_blank"
+class="discord-btn">
+
+💬 ENTRAR AL DISCORD
+
+</a>
+
+</section>
+
+<footer>
+
+<div class="footer-logo">
+☁ AKATSUKI
+</div>
+
+<p>
+Discord Oficial • Ticket Tool
+</p>
+
+<p>
+Creado por Matute
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
